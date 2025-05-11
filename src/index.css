@@ -1,13 +1,189 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ .container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card {
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.currency {
+  font-size: 18px;
+  color: gray;
+}
+
+.change {
+  color: green;
+  font-weight: 600;
+  margin: 4px 0 0;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  padding: 8px 16px;
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.tab-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: black;
+}
+
+.active-tab {
+  border-bottom: 3px solid #4f46e5;
+}
+
+.fullscreen-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.full-screen-compare {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.switch-compare {
+  margin-right: 4rem;
+}
+
+.range-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.chart-controls .ant-btn {
+  min-width: 49px;
+  min-height: 33px;
+  font-size: 16px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: transparent;
+}
+
+/* Medium screens */
+@media (max-width: 768px) {
+  .tabs {
+    justify-content: center;
+  }
+
+  .tab-button {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .chart-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .chart-controls .ant-btn {
+    font-size: 14px;
+    padding: 6px 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .full-screen-compare {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tab-button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .chart-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .chart-controls .ant-btn {
+    width: 100%;
+  }
+
+  .full-screen-compare {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .switch-compare {
+    margin-right: 0;
+  }
+
+  .fullscreen-container {
+    font-size: 14px;
+    justify-content: center;
+  }
+}
+
+.fullscreen {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999;
+  background: white;
+  padding: 1rem;
+  overflow: auto;
 }
